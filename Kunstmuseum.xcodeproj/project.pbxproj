@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		CE75F2712C8B1501001AD0A3 /* KunstmuseumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F2702C8B1501001AD0A3 /* KunstmuseumApp.swift */; };
-		CE75F2732C8B1501001AD0A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE75F2722C8B1501001AD0A3 /* ContentView.swift */; };
 		CE75F2752C8B1502001AD0A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2742C8B1502001AD0A3 /* Assets.xcassets */; };
 		CE75F2782C8B1502001AD0A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE75F2772C8B1502001AD0A3 /* Preview Assets.xcassets */; };
+		FA286A202CB55911004BDA24 /* ArtObjectResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A1F2CB55911004BDA24 /* ArtObjectResponse.swift */; };
+		FA286A222CB559D2004BDA24 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A212CB559D2004BDA24 /* ArtObject.swift */; };
+		FA286A242CB55E55004BDA24 /* ArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A232CB55E55004BDA24 /* ArtViewModel.swift */; };
+		FA286A262CB567B0004BDA24 /* ArtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A252CB567B0004BDA24 /* ArtListView.swift */; };
+		FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8206882CB5E49A00D5D880 /* HomeView.swift */; };
+		FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE75F26D2C8B1501001AD0A3 /* Kunstmuseum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kunstmuseum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE75F2702C8B1501001AD0A3 /* KunstmuseumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KunstmuseumApp.swift; sourceTree = "<group>"; };
-		CE75F2722C8B1501001AD0A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CE75F2742C8B1502001AD0A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE75F2772C8B1502001AD0A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA286A1F2CB55911004BDA24 /* ArtObjectResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectResponse.swift; sourceTree = "<group>"; };
+		FA286A212CB559D2004BDA24 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
+		FA286A232CB55E55004BDA24 /* ArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewModel.swift; sourceTree = "<group>"; };
+		FA286A252CB567B0004BDA24 /* ArtListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtListView.swift; sourceTree = "<group>"; };
+		FA8206882CB5E49A00D5D880 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KustmuseumAppStart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +61,13 @@
 		CE75F26F2C8B1501001AD0A3 /* Kunstmuseum */ = {
 			isa = PBXGroup;
 			children = (
-				CE75F2702C8B1501001AD0A3 /* KunstmuseumApp.swift */,
-				CE75F2722C8B1501001AD0A3 /* ContentView.swift */,
+				FA286A1E2CB5570B004BDA24 /* Model */,
+				FA286A1D2CB55704004BDA24 /* ViewModel */,
+				FA286A1C2CB556EB004BDA24 /* View */,
 				CE75F2742C8B1502001AD0A3 /* Assets.xcassets */,
 				CE75F2762C8B1502001AD0A3 /* Preview Content */,
+				CE75F2702C8B1501001AD0A3 /* KunstmuseumApp.swift */,
+				FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */,
 			);
 			path = Kunstmuseum;
 			sourceTree = "<group>";
@@ -65,6 +78,32 @@
 				CE75F2772C8B1502001AD0A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA286A1C2CB556EB004BDA24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA8206882CB5E49A00D5D880 /* HomeView.swift */,
+				FA286A252CB567B0004BDA24 /* ArtListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA286A1D2CB55704004BDA24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA286A232CB55E55004BDA24 /* ArtViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA286A1E2CB5570B004BDA24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FA286A1F2CB55911004BDA24 /* ArtObjectResponse.swift */,
+				FA286A212CB559D2004BDA24 /* ArtObject.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE75F2732C8B1501001AD0A3 /* ContentView.swift in Sources */,
+				FA286A242CB55E55004BDA24 /* ArtViewModel.swift in Sources */,
+				FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */,
+				FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */,
 				CE75F2712C8B1501001AD0A3 /* KunstmuseumApp.swift in Sources */,
+				FA286A222CB559D2004BDA24 /* ArtObject.swift in Sources */,
+				FA286A202CB55911004BDA24 /* ArtObjectResponse.swift in Sources */,
+				FA286A262CB567B0004BDA24 /* ArtListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +323,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,9 +331,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.syntax-institut.Kunstmuseum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -314,9 +364,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "de.syntax-institut.Kunstmuseum";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
