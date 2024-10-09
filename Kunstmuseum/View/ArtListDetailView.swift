@@ -60,6 +60,8 @@ struct ArtListDetailView: View {
                     Image(systemName: isActiv ? "heart.fill" : "heart")
                         .foregroundStyle(isActiv ? .red : .gray)
                 }
+                // Wäre auch mit einem Image lösbar und einer If/else die
+                //append oder remove nutzt jenachdem ob er etwas in der Favoritenliste hat oder nicht
             }
         }
     }
