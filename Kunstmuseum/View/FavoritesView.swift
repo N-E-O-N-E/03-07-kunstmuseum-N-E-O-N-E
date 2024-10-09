@@ -55,7 +55,6 @@ struct FavoritesView: View {
                         } label: {
                             Text("Löschen")
                         }
-
                     }
                    
             }.listStyle(.plain)
