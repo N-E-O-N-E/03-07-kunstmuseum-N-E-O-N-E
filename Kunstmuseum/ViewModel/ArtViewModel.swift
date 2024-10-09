@@ -28,10 +28,10 @@ class ArtViewModel: Observable, ObservableObject {
         }
     }
     
-    func fetchArt() {
+    func fetchArt(suche: String) {
         Task {
             do {
-                guard let objectIds = try await getArtObjects().objectIDs else { return }
+                guard let objectIds = try await getArtObjects(suche: suche).objectIDs else { return }
                 
                 for id in objectIds {
                     let artObject = try await fetchArtObjectDetails(for: id)
@@ -44,9 +44,8 @@ class ArtViewModel: Observable, ObservableObject {
             }
         }
     }
-    
-    private func getArtObjects() async throws -> ArtObjectResponse {
-        let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=china"
+    private func getArtObjects(suche: String) async throws -> ArtObjectResponse {
+        let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=\(suche)"
         
         guard let url = URL(string: urlString) else {
             throw HTTPError.invalidURL
@@ -55,7 +54,6 @@ class ArtViewModel: Observable, ObservableObject {
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(ArtObjectResponse.self, from: data)
     }
-    
     private func fetchArtObjectDetails(for objectId: Int) async throws -> ArtObject {
         let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/objects/\(objectId)"
         
@@ -83,5 +81,4 @@ class ArtViewModel: Observable, ObservableObject {
     func isFavorite(for object: ArtObject) -> Bool {
         favObjects.contains(object)
     }
-    
 }

@@ -57,17 +57,12 @@ struct ArtListDetailView: View {
                     artViewModel.favObjects.append(objects!)
                     
                 }) {
-                    
-                    
-                        Image(systemName: isActiv ? "heart.fill" : "heart")
-                            .foregroundStyle(isActiv ? .red : .gray)
-                    
-                    
+                    Image(systemName: isActiv ? "heart.fill" : "heart")
+                        .foregroundStyle(isActiv ? .red : .gray)
                 }
             }
         }
     }
-        
 }
 
 #Preview {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ArtListView: View {
     @EnvironmentObject var artViewModel: ArtViewModel
+    @State var suche: String = ""
     
     var body: some View {
         HStack {
@@ -20,7 +21,22 @@ struct ArtListView: View {
                 .clipShape(.circle)
         }.padding(15)
         
+        HStack {
+            TextField("Suche", text: $suche)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            
+            Button("Suche") {
+                artViewModel.artObjects.removeAll()
+                artViewModel.fetchArt(suche: suche)
+                
+                
+            }.buttonStyle(.borderedProminent)
+                .padding()
+        }
+        
         Divider()
+        
         
         List(artViewModel.artObjects) { objects in
             NavigationLink(destination: {
@@ -62,8 +78,8 @@ struct ArtListView: View {
                     }
                 }
             })
-        }.task { do { artViewModel.fetchArt() } }
-            .listStyle(.plain)
+        } //.task { do { artViewModel.fetchArt() } }
+        .listStyle(.plain)
     }
 }
 

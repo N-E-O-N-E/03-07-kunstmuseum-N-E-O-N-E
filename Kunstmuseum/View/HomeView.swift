@@ -13,7 +13,7 @@ struct HomeView: View {
             
             Image("placeholder")
                 .resizable()
-                .frame(width: .infinity, height: 700)
+                //.frame(width: 400, height: 700)
                 .clipShape(.rect(cornerRadius: 20))
                 .blur(radius: 30)
                 .opacity(0.9)
