@@ -14,8 +14,10 @@
 		FA286A222CB559D2004BDA24 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A212CB559D2004BDA24 /* ArtObject.swift */; };
 		FA286A242CB55E55004BDA24 /* ArtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A232CB55E55004BDA24 /* ArtViewModel.swift */; };
 		FA286A262CB567B0004BDA24 /* ArtListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA286A252CB567B0004BDA24 /* ArtListView.swift */; };
+		FA41EA502CB69BCC00C2A85C /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41EA4F2CB69BCC00C2A85C /* FavoritesView.swift */; };
 		FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8206882CB5E49A00D5D880 /* HomeView.swift */; };
 		FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */; };
+		FAB8FB272CB68BB200E13C8B /* ArtListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8FB262CB68BB200E13C8B /* ArtListDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +29,10 @@
 		FA286A212CB559D2004BDA24 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
 		FA286A232CB55E55004BDA24 /* ArtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtViewModel.swift; sourceTree = "<group>"; };
 		FA286A252CB567B0004BDA24 /* ArtListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtListView.swift; sourceTree = "<group>"; };
+		FA41EA4F2CB69BCC00C2A85C /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FA8206882CB5E49A00D5D880 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KustmuseumAppStart.swift; sourceTree = "<group>"; };
+		FAB8FB262CB68BB200E13C8B /* ArtListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtListDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 			children = (
 				FA8206882CB5E49A00D5D880 /* HomeView.swift */,
 				FA286A252CB567B0004BDA24 /* ArtListView.swift */,
+				FAB8FB262CB68BB200E13C8B /* ArtListDetailView.swift */,
+				FA41EA4F2CB69BCC00C2A85C /* FavoritesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,10 +185,12 @@
 				FA286A242CB55E55004BDA24 /* ArtViewModel.swift in Sources */,
 				FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */,
 				FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */,
+				FAB8FB272CB68BB200E13C8B /* ArtListDetailView.swift in Sources */,
 				CE75F2712C8B1501001AD0A3 /* KunstmuseumApp.swift in Sources */,
 				FA286A222CB559D2004BDA24 /* ArtObject.swift in Sources */,
 				FA286A202CB55911004BDA24 /* ArtObjectResponse.swift in Sources */,
 				FA286A262CB567B0004BDA24 /* ArtListView.swift in Sources */,
+				FA41EA502CB69BCC00C2A85C /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

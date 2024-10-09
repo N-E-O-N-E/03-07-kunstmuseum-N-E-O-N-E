@@ -8,8 +8,14 @@
 import Foundation
 
 @MainActor
-class ArtViewModel: ObservableObject {
+class ArtViewModel: Observable, ObservableObject {
     @Published var artObjects: [ArtObject] = []
+    @Published var favObjects: [ArtObject] = []
+    {
+        didSet {
+            print("Favoriten wurden geändert!")
+        }
+    }
     
     enum HTTPError: Error {
         case invalidURL, fetchFailed
@@ -38,18 +44,18 @@ class ArtViewModel: ObservableObject {
             }
         }
     }
-
+    
     private func getArtObjects() async throws -> ArtObjectResponse {
         let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=china"
         
         guard let url = URL(string: urlString) else {
             throw HTTPError.invalidURL
         }
-
+        
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(ArtObjectResponse.self, from: data)
     }
-
+    
     private func fetchArtObjectDetails(for objectId: Int) async throws -> ArtObject {
         let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/objects/\(objectId)"
         
@@ -60,4 +66,22 @@ class ArtViewModel: ObservableObject {
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(ArtObject.self, from: data)
     }
+    
+    func addFavorite(for object: ArtObject) {
+        favObjects.append(object)
+        print("Favorit wurde hinzugefügt.")
+        
+    }
+    
+    func removeFavorite(for object: ArtObject) {
+        if let index = favObjects.firstIndex(of: object) {
+            favObjects.remove(at: index)
+            print("Favorit wurde entfernt.")
+        }
+    }
+    
+    func isFavorite(for object: ArtObject) -> Bool {
+        favObjects.contains(object)
+    }
+    
 }

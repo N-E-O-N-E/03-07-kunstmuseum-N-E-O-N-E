@@ -8,7 +8,7 @@
 import Foundation
 
 struct ArtObjectResponse: Codable {
-    let objectIDs: [Int]?
+    var objectIDs: [Int]?
     
 }
 

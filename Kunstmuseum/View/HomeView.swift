@@ -14,8 +14,8 @@ struct HomeView: View {
             Image("placeholder")
                 .resizable()
                 .frame(width: .infinity, height: 700)
-                .clipShape(.rect(cornerRadius: 50))
-                .blur(radius: 0).shadow(color: .purple,radius: 15)
+                .clipShape(.rect(cornerRadius: 20))
+                .blur(radius: 30)
                 .opacity(0.9)
                 .padding(.vertical)
             
@@ -23,14 +23,14 @@ struct HomeView: View {
                 .resizable()
                 .frame(width: 380, height: 380)
                 .rotationEffect(Angle(degrees: 10))
-                .blur(radius: 2)
+                .blur(radius: 0)
                 .blendMode(.hardLight)
                 
             Image("placeholder")
                 .resizable()
                 .frame(width: 380, height: 380)
                 .rotationEffect(Angle(degrees: 30))
-                .blur(radius: 1)
+                .blur(radius: 0)
                 .blendMode(.darken)
 
             Text("KM")
@@ -45,7 +45,7 @@ struct HomeView: View {
                 .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 1.0))
                 .shadow(color: .purple, radius: 6)
                 .opacity(0.99)
-                .blendMode(.exclusion)
+                .blendMode(.plusLighter)
         }
         Spacer()
     }

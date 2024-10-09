@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct ArtObject: Codable, Identifiable {
+struct ArtObject: Codable, Identifiable, Equatable {
     
     var id: Int {
         objectID
     }
-    
+
     var objectID: Int
     var title: String
     var artistDisplayName: String

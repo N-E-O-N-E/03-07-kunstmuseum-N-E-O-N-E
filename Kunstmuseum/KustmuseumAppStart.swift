@@ -8,15 +8,25 @@
 import SwiftUI
 
 struct KustmuseumAppStart: View {
+    @StateObject var artViewModel = ArtViewModel()
+    
     var body: some View {
         TabView {
             Tab("About", systemImage: "house.fill") {
                 HomeView()
             }
-            Tab("Art List", systemImage: "text.below.photo.fill") {
-                ArtListView()
+            Tab("Art list", systemImage: "text.below.photo.fill") {
+                NavigationStack {
+                    ArtListView()
+                }
             }
-        }.tint(.purple)      
+            Tab("Favorites", systemImage: "star.fill") {
+                NavigationStack {
+                    FavoritesView()
+                }
+            }
+        }.tint(.purple)
+            .environment(artViewModel)
     }
 }
 

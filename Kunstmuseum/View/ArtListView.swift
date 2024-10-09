@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ArtListView: View {
-    @StateObject var artViewModel = ArtViewModel()
+    @EnvironmentObject var artViewModel: ArtViewModel
     
     var body: some View {
         HStack {
@@ -18,26 +18,50 @@ struct ArtListView: View {
                 .resizable()
                 .frame(width: 90, height: 90)
                 .clipShape(.circle)
-        }.padding()
+        }.padding(15)
+        
         Divider()
+        
         List(artViewModel.artObjects) { objects in
-            VStack {
-                AsyncImage(url: URL(string: objects.primaryImage ?? "")) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(.rect(cornerRadius: 10))
-                        .shadow(radius: 3)
-                        .padding()
-                } placeholder: {
-                    ProgressView()
+            NavigationLink(destination: {
+                ArtListDetailView(objects: objects)
+                
+            }, label: {
+                
+                VStack(alignment:.leading) {
+                    HStack {
+                        AsyncImage(url: URL(string: objects.primaryImage ?? "")) { image in
+                            image
+                                .resizable()
+                                .frame(width: 80, height: 80)
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(.rect(cornerRadius: 10))
+                                .shadow(radius: 3)
+                                .padding()
+                        } placeholder: {
+                            ProgressView()
+                        }
+                        
+                        
+                        VStack(alignment: .leading) {
+                            
+                            Text(objects.title)
+                                .font(.callout).bold()
+                            Text(objects.artistDisplayName)
+                                .font(.caption2)
+                            Text(objects.objectID.description)
+                                .font(.caption2)
+                                .foregroundStyle(.orange)
+                            
+                            if artViewModel.isFavorite(for: objects) {
+                                Image(systemName: "heart.fill")
+                                    .foregroundStyle(.red)
+                            }
+                            
+                        }
+                    }
                 }
-                .frame(maxWidth: .infinity)
-                Text(objects.title)
-                    .font(.headline).bold()
-                Text(objects.artistDisplayName)
-                    .font(.subheadline)
-            }
+            })
         }.task { do { artViewModel.fetchArt() } }
             .listStyle(.plain)
     }
