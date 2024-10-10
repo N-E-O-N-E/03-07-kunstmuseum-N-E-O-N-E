@@ -14,10 +14,7 @@ class ArtViewModel: Observable, ObservableObject {
     @Published var favObjects: [ArtObject] = [] {
         didSet { print("Favoriten wurden geändert!") } }
     
-    let repository: ArtRepository
-    init (repository: ArtRepository) {
-        self.repository = repository
-    }
+    let repository = ArtRepository()
     
     func addFavorite(for object: ArtObject) {
         favObjects.append(object)
