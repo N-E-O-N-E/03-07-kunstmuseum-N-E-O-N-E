@@ -59,7 +59,7 @@ struct FavoritesView: View {
                    
             }.listStyle(.plain)
             
-            .navigationTitle("Favorites")
+            .navigationTitle("My Favorites ★")
             .navigationBarTitleDisplayMode(.large)
         }
     }

@@ -29,10 +29,8 @@ struct ArtListView: View {
             Button("Suche") {
                 artViewModel.artObjects.removeAll()
                 Task {
-                    artViewModel.fetchArt(suche: suche)
+                    try await artViewModel.artObjects.append(contentsOf: artViewModel.repository.fetchArt(suche: suche))
                 }
-                
-                
             }.buttonStyle(.borderedProminent)
                 .padding()
         }

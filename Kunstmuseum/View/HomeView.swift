@@ -34,15 +34,15 @@ struct HomeView: View {
                 .blendMode(.darken)
 
             Text("KM")
-                .font(.system(size: 190)).bold()
+                .font(.system(size: 260)).bold()
                 .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 1.0))
-                .shadow(color: .purple, radius: 6)
+                .shadow(color: .white, radius: 10)
                 .opacity(0.9)
                 .blendMode(.exclusion)
             
             Text("KunstMuseum")
                 .font(.system(size: 55)).bold()
-                .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 1.0))
+                .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 0.6))
                 .shadow(color: .purple, radius: 6)
                 .opacity(0.99)
                 .blendMode(.plusLighter)

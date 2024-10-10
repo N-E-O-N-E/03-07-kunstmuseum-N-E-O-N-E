@@ -18,5 +18,8 @@ struct ArtObject: Codable, Identifiable, Equatable {
     var artistDisplayName: String
     var primaryImage: String?
     
+    var artistDisplayBio: String
+    var repository: String
+    var department: String
 }
 

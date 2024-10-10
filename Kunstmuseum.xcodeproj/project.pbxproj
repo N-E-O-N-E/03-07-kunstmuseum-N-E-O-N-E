@@ -18,6 +18,7 @@
 		FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8206882CB5E49A00D5D880 /* HomeView.swift */; };
 		FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */; };
 		FAB8FB272CB68BB200E13C8B /* ArtListDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB8FB262CB68BB200E13C8B /* ArtListDetailView.swift */; };
+		FACCE3332CB7EE4A0035B0C8 /* ArtRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACCE3322CB7EE4A0035B0C8 /* ArtRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		FA8206882CB5E49A00D5D880 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FA9E56942CB5DE0700B278E1 /* KustmuseumAppStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KustmuseumAppStart.swift; sourceTree = "<group>"; };
 		FAB8FB262CB68BB200E13C8B /* ArtListDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtListDetailView.swift; sourceTree = "<group>"; };
+		FACCE3322CB7EE4A0035B0C8 /* ArtRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArtRepository.swift; path = Kunstmuseum/Model/ArtRepository.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				FA286A1F2CB55911004BDA24 /* ArtObjectResponse.swift */,
 				FA286A212CB559D2004BDA24 /* ArtObject.swift */,
+				FACCE3322CB7EE4A0035B0C8 /* ArtRepository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				FA286A242CB55E55004BDA24 /* ArtViewModel.swift in Sources */,
 				FA9E56952CB5DE0700B278E1 /* KustmuseumAppStart.swift in Sources */,
 				FA8206892CB5E49A00D5D880 /* HomeView.swift in Sources */,
+				FACCE3332CB7EE4A0035B0C8 /* ArtRepository.swift in Sources */,
 				FAB8FB272CB68BB200E13C8B /* ArtListDetailView.swift in Sources */,
 				CE75F2712C8B1501001AD0A3 /* KunstmuseumApp.swift in Sources */,
 				FA286A222CB559D2004BDA24 /* ArtObject.swift in Sources */,

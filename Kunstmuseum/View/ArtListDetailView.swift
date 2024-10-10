@@ -33,6 +33,12 @@ struct ArtListDetailView: View {
                 .font(.callout).bold()
             Text(objects!.artistDisplayName)
                 .font(.caption2)
+            Text(objects!.department)
+                .font(.caption2)
+            Text(objects!.repository)
+                .font(.caption2)
+            Text(objects!.artistDisplayBio)
+                .font(.caption2)
             
             Divider()
             
