@@ -20,7 +20,7 @@ class ArtRepository: Repository {
     }
     
     func getArtObjects(suche: String) async throws -> ArtObjectResponse {
-        let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=\(suche)"
+        let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=\(suche)"
         guard let url = URL(string: urlString) else { throw HTTPError.invalidURL }
         let (data, _) = try await URLSession.shared.data(from: url)
         return try JSONDecoder().decode(ArtObjectResponse.self, from: data)

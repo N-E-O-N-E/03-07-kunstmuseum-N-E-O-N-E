@@ -27,7 +27,6 @@ class ArtViewModel: Observable, ObservableObject {
         
         for id in objectIds {
             let artObject = try await repository.fetchArtObjectDetails(for: id)
-            
             self.artObjects.append(artObject)
         }
     }
