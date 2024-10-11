@@ -31,7 +31,7 @@ struct ArtListView: View {
             Button("Suche") {
                 artViewModel.artObjects.removeAll()
                 Task {
-                    try await artViewModel.fetchArt(suche: artViewModel.suche)
+                    try await artViewModel.fetchArt()
                 }
             }.buttonStyle(.borderedProminent).disabled(buttonInactive)
                 .padding()

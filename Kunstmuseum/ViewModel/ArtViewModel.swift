@@ -19,7 +19,7 @@ class ArtViewModel: Observable, ObservableObject {
         didSet { print("Favoriten wurden geändert!") } }
     
     
-    func fetchArt(suche: String) async throws {
+    func fetchArt() async throws {
         
         guard let objectIds = try await repository.getArtObjects(suche: suche).objectIDs else {
             throw ArtRepository.HTTPError.fetchFailed
