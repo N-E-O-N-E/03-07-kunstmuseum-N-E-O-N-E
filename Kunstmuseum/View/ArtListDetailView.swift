@@ -14,7 +14,6 @@ struct ArtListDetailView: View {
     var objects: ArtObject?
     
     var body: some View {
-        
         VStack(alignment:.center) {
             
             AsyncImage(url: URL(string: (objects?.primaryImage)!)) { image in
@@ -29,25 +28,54 @@ struct ArtListDetailView: View {
                 ProgressView()
             }
             
-            Text(objects!.title)
-                .font(.callout).bold()
-            Text(objects!.artistDisplayName)
-                .font(.caption2)
-            Text(objects!.department)
-                .font(.caption2)
-            Text(objects!.repository)
-                .font(.caption2)
-            Text(objects!.artistDisplayBio)
-                .font(.caption2)
-            
             Divider()
             
-            Text(objects!.objectID.description)
+            Grid(alignment: .leading) {
+                
+                GridRow {
+                    Text("Title: ")
+                        .font(.callout).bold()
+                    Text("\(objects!.title)")
+                        .font(.callout).bold()
+                }
+                GridRow {
+                    Text("Artist: ")
+                        .font(.caption2)
+                    Text("\(objects!.artistDisplayName)")
+                        .font(.caption2)
+                }
+                GridRow {
+                    Text("Department: ")
+                        .font(.caption2)
+                    Text("\(objects!.department)")
+                        .font(.caption2)
+                    
+                }
+                GridRow {
+                    Text("Repository: ")
+                        .font(.caption2)
+                    Text("\(objects!.repository)")
+                        .font(.caption2)
+                    
+                }
+                GridRow {
+                    Text("Artist Bio: ")
+                        .font(.caption2)
+                    Text("\(objects!.artistDisplayBio)")
+                        .font(.caption2)
+                }
+            }.padding(15)
+
+            Divider()
+            
+            Text("Object-ID: \(objects!.objectID.description)")
                 .font(.caption2)
                 .foregroundStyle(.orange)
             
                 .navigationTitle("Object detail")
                 .navigationBarTitleDisplayMode(.large)
+            
+            Spacer()
         }
         .onAppear() {
             if artViewModel.isFavorite(for: objects!) {
@@ -75,4 +103,5 @@ struct ArtListDetailView: View {
 
 #Preview {
     ArtListDetailView()
+        .environment(ArtViewModel())
 }

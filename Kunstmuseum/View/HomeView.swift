@@ -9,43 +9,30 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
+        
         ZStack(alignment:.center) {
             
-            Image("placeholder")
+            Image("museum")
                 .resizable()
-                //.frame(width: 400, height: 700)
-                .clipShape(.rect(cornerRadius: 20))
-                .blur(radius: 30)
-                .opacity(0.9)
-                .padding(.vertical)
-            
-            Image("placeholder")
-                .resizable()
-                .frame(width: 380, height: 380)
-                .rotationEffect(Angle(degrees: 10))
-                .blur(radius: 0)
-                .blendMode(.hardLight)
-                
-            Image("placeholder")
-                .resizable()
-                .frame(width: 380, height: 380)
-                .rotationEffect(Angle(degrees: 30))
-                .blur(radius: 0)
-                .blendMode(.darken)
+                .scaledToFill()
+                .frame(width: .infinity, height: 760)
+                .ignoresSafeArea()
+                .shadow(radius: 20)
 
-            Text("KM")
-                .font(.system(size: 260)).bold()
-                .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 1.0))
-                .shadow(color: .white, radius: 10)
-                .opacity(0.9)
-                .blendMode(.exclusion)
-            
-            Text("KunstMuseum")
-                .font(.system(size: 55)).bold()
-                .foregroundStyle(Color(hue: 1.0, saturation: 0.0, brightness: 0.6))
-                .shadow(color: .purple, radius: 6)
-                .opacity(0.99)
-                .blendMode(.plusLighter)
+            VStack {
+                Image("placeholder")
+                    .resizable()
+                    .frame(width: 210, height: 135)
+                    .border(.black)
+                    .shadow(color: .gray, radius: 4)
+                    
+                Text("Kunstmuseum V1.0")
+                    .font(.system(size: 12)).bold().fontDesign(.serif)
+                    .foregroundStyle(Color(hue: 0.0, saturation: 0.0, brightness: 0.0))
+                    .shadow(color: .white, radius: 10)
+                    .opacity(0.9)
+                    .padding(5)
+            }.offset(x: 0, y: 0)
         }
         Spacer()
     }

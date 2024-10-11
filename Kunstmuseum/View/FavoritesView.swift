@@ -52,6 +52,7 @@ struct FavoritesView: View {
                     }.swipeActions(edge: .trailing) {
                         Button(role: .destructive) {
                             artViewModel.removeFavorite(for: favorite)
+
                         } label: {
                             Text("Löschen")
                         }
@@ -59,7 +60,7 @@ struct FavoritesView: View {
                    
             }.listStyle(.plain)
             
-            .navigationTitle("My Favorites ★")
+                .navigationTitle("My \(artViewModel.favObjects.count) Favorites ★")
             .navigationBarTitleDisplayMode(.large)
         }
     }
@@ -67,4 +68,5 @@ struct FavoritesView: View {
 
 #Preview {
     FavoritesView()
+        .environment(ArtViewModel())
 }

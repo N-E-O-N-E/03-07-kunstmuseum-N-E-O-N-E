@@ -9,7 +9,9 @@ import SwiftUI
 
 struct KustmuseumAppStart: View {
     @StateObject var artViewModel = ArtViewModel()
+    
     var body: some View {
+        
         TabView {
             Tab("About", systemImage: "house.fill") {
                 HomeView()

@@ -9,15 +9,18 @@ import SwiftUI
 
 struct ArtListView: View {
     @EnvironmentObject var artViewModel: ArtViewModel
+    @State var buttonInactive: Bool = true
     
     var body: some View {
         HStack {
-            Text("The Art Gallery").font(.title).bold()
+            Text("The Art Gallery").font(.title).bold().shadow(color: .purple, radius: 20)
             Spacer()
             Image("placeholder")
                 .resizable()
-                .frame(width: 90, height: 90)
-                .clipShape(.circle)
+                .frame(width: 140, height: 90)
+                .clipShape(.rect(cornerRadius: 0))
+                .border(.black)
+                .shadow(radius: 2)
         }.padding(15)
         
         HStack {
@@ -30,8 +33,15 @@ struct ArtListView: View {
                 Task {
                     try await artViewModel.fetchArt(suche: artViewModel.suche)
                 }
-            }.buttonStyle(.borderedProminent)
+            }.buttonStyle(.borderedProminent).disabled(buttonInactive)
                 .padding()
+                .onChange(of: artViewModel.suche) { oldValue, newValue in
+                    if !artViewModel.suche.isEmpty {
+                        buttonInactive = false
+                    } else {
+                        buttonInactive = true
+                    }
+                }
         }
         
         Divider()
@@ -79,9 +89,14 @@ struct ArtListView: View {
             })
         } //.task { do { artViewModel.fetchArt() } }
         .listStyle(.plain)
+        .onAppear(){
+            buttonInactive = true
+            artViewModel.suche = ""
+        }
     }
 }
 
 #Preview {
     ArtListView()
+        .environment(ArtViewModel())
 }
