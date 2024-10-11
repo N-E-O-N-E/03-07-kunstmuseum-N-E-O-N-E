@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct KustmuseumAppStart: View {
-    @StateObject var artViewModel = ArtViewModel(repository: ArtRepository())
-    
+    @StateObject var artViewModel = ArtViewModel()
     var body: some View {
         TabView {
             Tab("About", systemImage: "house.fill") {

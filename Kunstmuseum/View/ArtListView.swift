@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ArtListView: View {
     @EnvironmentObject var artViewModel: ArtViewModel
-    @State var suche: String = ""
     
     var body: some View {
         HStack {
@@ -22,14 +21,14 @@ struct ArtListView: View {
         }.padding(15)
         
         HStack {
-            TextField("Suche", text: $suche)
+            TextField("Suche", text: $artViewModel.suche)
                 .textFieldStyle(.roundedBorder)
                 .padding()
             
             Button("Suche") {
                 artViewModel.artObjects.removeAll()
                 Task {
-                    try await artViewModel.artObjects.append(contentsOf: artViewModel.repository.fetchArt(suche: suche))
+                    try await artViewModel.artObjects.append(contentsOf: artViewModel.repository.fetchArt(suche: artViewModel.suche))
                 }
             }.buttonStyle(.borderedProminent)
                 .padding()

@@ -10,11 +10,13 @@ import Foundation
 @MainActor
 class ArtViewModel: Observable, ObservableObject {
     
+    @Published var suche: String = ""
+    
     @Published var artObjects: [ArtObject] = []
     @Published var favObjects: [ArtObject] = [] {
         didSet { print("Favoriten wurden geändert!") } }
     
-    let repository = ArtRepository()
+    private let repository = ArtRepository()
     
     func addFavorite(for object: ArtObject) {
         favObjects.append(object)
