@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class ArtRepository {
+class ArtRepository: Repository {
     
     enum HTTPError: Error {
         case invalidURL, fetchFailed
