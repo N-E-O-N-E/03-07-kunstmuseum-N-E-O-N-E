@@ -19,23 +19,6 @@ class ArtRepository {
         }
     }
     
-    func fetchArt(suche: String) async throws -> [ArtObject] {
-        var objects: [ArtObject] = []
-            do {
-                guard let objectIds = try await getArtObjects(suche: suche).objectIDs else {
-                    throw HTTPError.fetchFailed
-                }
-                
-                for id in objectIds {
-                    let artObject = try await fetchArtObjectDetails(for: id)
-                    objects.append(artObject)
-                }
-            } catch {
-                print(HTTPError.fetchFailed.message)
-            }
-        return objects
-    }
-    
     func getArtObjects(suche: String) async throws -> ArtObjectResponse {
         let urlString = "https://collectionapi.metmuseum.org/public/collection/v1/search?isHighlight=true&q=\(suche)"
         guard let url = URL(string: urlString) else { throw HTTPError.invalidURL }

@@ -16,7 +16,35 @@ class ArtViewModel: Observable, ObservableObject {
     @Published var favObjects: [ArtObject] = [] {
         didSet { print("Favoriten wurden geändert!") } }
     
-    private let repository = ArtRepository()
+    let repository = ArtRepository()
+    
+    func fetchArt(suche: String) async throws {
+        guard let objectIds = try await repository.getArtObjects(suche: suche).objectIDs else {
+            throw ArtRepository.HTTPError.fetchFailed
+        }
+        
+        for id in objectIds {
+            let artObject = try await repository.fetchArtObjectDetails(for: id)
+            self.artObjects.append(artObject)
+        }
+    }
+    
+//    func fetchArt(suche: String) async throws -> [ArtObject] {
+//        var objects: [ArtObject] = []
+//            do {
+//                guard let objectIds = try await repository.getArtObjects(suche: suche).objectIDs else {
+//                    throw ArtRepository.HTTPError.fetchFailed
+//                }
+//                
+//                for id in objectIds {
+//                    let artObject = try await repository.fetchArtObjectDetails(for: id)
+//                    objects.append(artObject)
+//                }
+//            } catch {
+//                print(ArtRepository.HTTPError.fetchFailed.message)
+//            }
+//        return objects
+//    }
     
     func addFavorite(for object: ArtObject) {
         favObjects.append(object)
